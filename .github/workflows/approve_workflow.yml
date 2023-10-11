@@ -13,11 +13,13 @@ on:
 jobs:
 
   test:
+    name: "Validate config"
     runs-on: ubuntu-20.04
     steps:
       - run: echo "test"
       
   manual-approval:
+    name: "Waiting for automated approve of Deploymnent to ENV"
     environment: 'bot_prod'
     runs-on: ubuntu-20.04
     needs:
@@ -26,7 +28,7 @@ jobs:
       - run: echo "Approved to bot_prod"
 
   prod:
-    name: 'Deploy to Prod'
+    name: 'Closed Workflow'
     runs-on: ubuntu-20.04
     needs: 
       - manual-approval
