@@ -11,9 +11,17 @@ on:
     branches: [ main ]
 
 jobs:
+
+  test:
+    runs-on: ubuntu-20.04
+    steps:
+      - run: echo "test"
+      
   manual-approval:
     environment: 'bot_prod'
     runs-on: ubuntu-20.04
+    needs:
+      - test
     steps:
       - run: echo "Approved to bot_prod"
 
@@ -22,4 +30,6 @@ jobs:
     runs-on: ubuntu-20.04
     needs: 
       - manual-approval
+    steps:
+      - run: echo "approved"
 
