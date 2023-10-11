@@ -9,3 +9,17 @@ on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches: [ main ]
+
+jobs:
+  manual-approval:
+    environment: 'bot_prod'
+    runs-on: ubuntu-20.04
+    steps:
+      - run: echo "Approved to bot_prod"
+
+  prod:
+    name: 'Deploy to Prod'
+    runs-on: ubuntu-20.04
+    needs: 
+      - manual-approval
+
