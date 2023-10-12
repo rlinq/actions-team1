@@ -1,4 +1,4 @@
-name: Workflow with manual approval
+name: Workflow with autmated approval
 
 env:
   GH_TOKEN: ${{ github.token }}
