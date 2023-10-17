@@ -18,20 +18,40 @@ jobs:
     steps:
       - run: echo "test"
       
-  manual-approval:
+  automated-validation-approval:
     name: "Waiting for automated approve of Deploymnent to ENV"
-    environment: 'bot_prod'
+    environment: 'bot_validation'
     runs-on: ubuntu-20.04
     needs:
       - test
     steps:
       - run: echo "Approved to bot_prod"
 
-  prod:
+  automated-deployment-approval:
     name: 'Closed Workflow'
+    environment: 'bot_deployment'
     runs-on: ubuntu-20.04
     needs: 
-      - manual-approval
+      - automated-validation-approval
     steps:
       - run: echo "approved"
+
+  automated-confirmation-approval:
+    name: 'Closed Workflow for confirmation'
+    environment: 'bot_deployment'
+    runs-on: ubuntu-20.04
+    needs: 
+      - automated-deployment-approval
+    steps:
+      - run: echo "approved"
+
+  end:
+    name: 'End workflow'
+    runs-on: ubuntu-20.04
+    needs: 
+      - automated-confirmation-approval
+    steps:
+      - run: echo "approved"
+
+  
 
