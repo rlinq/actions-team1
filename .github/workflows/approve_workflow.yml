@@ -27,21 +27,44 @@ jobs:
     steps:
       - run: echo "Approved to bot_prod"
 
+  transiton-to-deployment:
+    name: 'End workflow2 '
+    runs-on: ubuntu-20.04
+    needs: 
+      - automated-validation-approval
+    steps:
+      - name: Sleep for 1o seconds
+        uses: jakejarvis/wait-action@master
+        with:
+          time: '10s'
+
+
   automated-deployment-approval:
     name: 'Closed Workflow'
     environment: 'bot_deployment'
     runs-on: ubuntu-20.04
     needs: 
-      - automated-validation-approval
+      - transiton-to-deployment
     steps:
       - run: echo "approved"
 
-  automated-confirmation-approval:
-    name: 'Closed Workflow for confirmation'
-    environment: 'bot_deployment'
+  transiton-to-completion:
+    name: 'End workflow23'
     runs-on: ubuntu-20.04
     needs: 
       - automated-deployment-approval
+    steps:
+      - name: Sleep for 1o seconds
+        uses: jakejarvis/wait-action@master
+        with:
+          time: '10s'
+
+  automated-confirmation-approval:
+    name: 'Closed Workflow for confirmation'
+    environment: 'bot_completion'
+    runs-on: ubuntu-20.04
+    needs: 
+      - transiton-to-completion
     steps:
       - run: echo "approved"
 
