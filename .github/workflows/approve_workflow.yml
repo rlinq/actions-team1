@@ -33,10 +33,10 @@ jobs:
     needs: 
       - automated-validation-approval
     steps:
-      - name: Sleep for 1o seconds
+      - name: Sleep for 2 seconds
         uses: jakejarvis/wait-action@master
         with:
-          time: '10s'
+          time: '2s'
 
 
   automated-deployment-approval:
@@ -54,10 +54,10 @@ jobs:
     needs: 
       - automated-deployment-approval
     steps:
-      - name: Sleep for 1o seconds
+      - name: Sleep for 2 seconds
         uses: jakejarvis/wait-action@master
         with:
-          time: '10s'
+          time: '2s'
 
   automated-confirmation-approval:
     name: 'Closed Workflow for confirmation'
