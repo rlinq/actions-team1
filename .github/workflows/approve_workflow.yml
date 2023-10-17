@@ -44,7 +44,7 @@ jobs:
     environment: 'bot_deployment'
     runs-on: ubuntu-20.04
     needs: 
-      - transiton-to-deployment
+      - automated-validation-approval
     steps:
       - run: echo "approved"
 
@@ -64,7 +64,7 @@ jobs:
     environment: 'bot_completion'
     runs-on: ubuntu-20.04
     needs: 
-      - transiton-to-completion
+      - automated-deployment-approval
     steps:
       - run: echo "approved"
 
