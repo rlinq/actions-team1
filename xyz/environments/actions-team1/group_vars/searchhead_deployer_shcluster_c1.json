@@ -2,7 +2,7 @@
     "tenant_apps": [
         {
             "name": "app1",
-            "source_app": "app1",
+            "source_app": "app11",
             "state": "present",
             "repo_name": "actions-team1",
             "src_path": "{{ repo_clones_path }}/xyz/splunk/etc/apps/custom"
