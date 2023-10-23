@@ -4,22 +4,28 @@
             "name": "app1",
             "source_app": "app11",
             "state": "present",
-            "repo_name": "actions-team1",
-            "src_path": "{{ repo_clones_path }}/xyz/splunk/etc/apps/custom"
+            "src_path": "xyz/splunk/etc/apps/custom"
+            "rsync_opts": [
+               "--include=local/db_connection_types.conf",
+               "--include=local/dbx_settings.conf",
+               "--exclude=local/*",
+               "--exclude=secret/*",
+               "--exclude=certs/identity.dat",
+               "--exclude=keystore",
+               "--exclude=customized.java.path"
+            ]
         },
         {
             "name": "app2",
             "source_app": "app2",
             "state": "present",
-            "repo_name": "actions-team1",
-            "src_path": "{{ repo_clones_path }}/xyz/splunk/etc/apps/custom"
+            "src_path": "xyz/splunk/etc/apps/custom"
         },
         {
             "name": "app3",
             "source_app": "app3",
             "state": "present",
-            "repo_name": "actions-team1",
-            "src_path": "{{ repo_clones_path }}/xyz/splunk/etc/apps/custom"
+            "src_path": "xyz/splunk/etc/apps/custom"
         }
     ]
 }
