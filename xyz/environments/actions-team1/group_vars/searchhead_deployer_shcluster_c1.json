@@ -5,7 +5,7 @@
             "source_app": "app11",
             "state": "present",
             "src_path": "xyz/splunk/etc/apps/custom",
-            "dest_dir": "shcluster/apps"
+            "dest_dir": "shcluster/apps",
             "rsync_opts": [
                "--include=local/db_connection_types.conf",
                "--include=local/dbx_settings.conf",
