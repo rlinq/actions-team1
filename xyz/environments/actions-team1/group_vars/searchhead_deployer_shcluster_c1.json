@@ -11,8 +11,7 @@
                "--include=local/dbx_settings.conf",
                "--exclude=local/*",
                "--exclude=secret/*",
-               "--exclude=certs/identity.dat",
-               "--exclude=keystore"
+               "--exclude=certs/identity.dat"
             ]
         },
         {
