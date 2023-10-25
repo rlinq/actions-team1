@@ -17,12 +17,6 @@
             ]
         },
         {
-            "name": "app2",
-            "source_app": "app2",
-            "state": "present",
-            "src_path": "xyz/splunk/etc/apps/custom"
-        },
-        {
             "name": "app3",
             "source_app": "app3",
             "state": "present",
