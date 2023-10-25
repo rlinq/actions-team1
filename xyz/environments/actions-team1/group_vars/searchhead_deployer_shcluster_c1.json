@@ -12,8 +12,7 @@
                "--exclude=local/*",
                "--exclude=secret/*",
                "--exclude=certs/identity.dat",
-               "--exclude=keystore",
-               "--exclude=customized.java.path"
+               "--exclude=keystore"
             ]
         },
         {
