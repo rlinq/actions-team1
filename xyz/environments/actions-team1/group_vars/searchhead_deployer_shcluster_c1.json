@@ -10,8 +10,7 @@
                "--include=local/db_connection_types.conf",
                "--include=local/dbx_settings.conf",
                "--exclude=local/*",
-               "--exclude=secret/*",
-               "--exclude=certs/identity.dat"
+               "--exclude=secret/*"
             ]
         },
         {
