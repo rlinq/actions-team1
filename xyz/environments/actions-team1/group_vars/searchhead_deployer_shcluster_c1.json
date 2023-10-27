@@ -18,6 +18,12 @@
             "source_app": "app3",
             "state": "present",
             "source_path": "xyz/splunk/etc/apps/custom"
+        },
+                {
+            "name": "anurag",
+            "source_app": "anurag_2023",
+            "state": "present",
+            "source_path": "xyz/splunk/etc/apps/custom"
         }
     ]
 }
