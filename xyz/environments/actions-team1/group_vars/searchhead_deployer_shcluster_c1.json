@@ -5,7 +5,6 @@
             "source_app": "app11",
             "state": "present",
             "source_path": "xyz/splunk/etc/apps/custom",
-            "dest_dir": "shcluster/apps",
             "rsync_opts": [
                "--include=local/db_connection_types.conf",
                "--include=local/dbx_settings.conf",
@@ -17,7 +16,7 @@
             "name": "app3",
             "source_app": "app3",
             "state": "present",
-            "source_path": "xyz/splunk/etc/apps/custom"
+            "source_path": "xyz/splunk/etc/apps/custom2"
         },
                 {
             "name": "anurag",
