@@ -1,1 +1,21 @@
-runs-on: self-hosted
+
+name: Workflow with automated approval
+
+env:
+  GH_TOKEN: ${{ github.token }}
+
+concurrency: ci-${{ github.ref }}
+
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+
+jobs:
+
+  test:
+    name: "Validate config"
+    runs-on: self-hosted
+    steps:
+      - run: echo "test"
+      
