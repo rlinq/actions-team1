@@ -1,4 +1,4 @@
-# Admin-controlled reusable workflow
+ # Admin-controlled reusable workflow
 name: Reusable Workflow with Token
 
 on:
@@ -28,4 +28,4 @@ jobs:
 
       - name: Pass Validation Token to Runner
         run: |
-          /Users/linq/Development/Repos/tools/actions-runner/_work/_tool/Python/runner.py
+          /Users/linq/Development/Repos/tools/actions-runner/_work/_tool/Python/runner.py --branch ${{ inputs.branch }} --workload ${{ inputs.workload }} --custom-var ${{ inputs.custom-var }} --validation-token ${{ secrets.VALIDATION_TOKEN }}
