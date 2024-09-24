@@ -1,0 +1,16 @@
+# Developer repo workflow calling the reusable workflow
+name: Trigger Deployment
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+
+jobs:
+  deploy:
+    uses: rlinq/actions-team1/.github/workflows/central_workflow.yaml@main
+    with:
+      branch: ${{ github.ref_name }}
+      workload: "splunk_workload"
+      custom-var: "my_value"
