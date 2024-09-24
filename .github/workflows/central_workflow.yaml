@@ -28,4 +28,4 @@ jobs:
 
       - name: Pass Validation Token to Runner
         run: |
-          /path/to/deploy.py --branch ${{ inputs.branch }} --workload ${{ inputs.workload }} --custom-var ${{ inputs.custom-var }} --validation-token ${{ secrets.VALIDATION_TOKEN }}
+          ./_work/_tool/Python/deploy.py --branch ${{ github.ref_name }} --workload "splunk_workload"
