@@ -21,11 +21,11 @@ jobs:
   deploy:
     runs-on: self-hosted
     steps:
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.x'
+      #- name: Set up Python
+      #  uses: actions/setup-python@v2
+      #  with:
+      #    python-version: '3.x'
 
       - name: Pass Validation Token to Runner
         run: |
-          python /path/to/deploy.py --branch ${{ inputs.branch }} --workload ${{ inputs.workload }} --custom-var ${{ inputs.custom-var }} --validation-token ${{ secrets.VALIDATION_TOKEN }}
+          /path/to/deploy.py --branch ${{ inputs.branch }} --workload ${{ inputs.workload }} --custom-var ${{ inputs.custom-var }} --validation-token ${{ secrets.VALIDATION_TOKEN }}
