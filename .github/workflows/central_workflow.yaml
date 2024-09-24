@@ -1,0 +1,31 @@
+# Admin-controlled reusable workflow
+name: Reusable Workflow with Token
+
+on:
+  workflow_call:
+    inputs:
+      branch:
+        description: 'Git branch to deploy'
+        required: true
+        type: string
+      workload:
+        description: 'Workload to use for deployment'
+        required: true
+        type: string
+      custom-var:
+        description: 'Custom variable for deployment'
+        required: false
+        type: string
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Pass Validation Token to Runner
+        run: |
+          python /path/to/deploy.py --branch ${{ inputs.branch }} --workload ${{ inputs.workload }} --custom-var ${{ inputs.custom-var }} --validation-token ${{ secrets.VALIDATION_TOKEN }}
